@@ -1,242 +1,90 @@
 [
   {
     "id": 1,
-    "name": "Refurbished Laptop",
-    "price": 25000,
-    "category": "Electronics",
-    "description": "Dell Latitude, 8GB RAM, 256GB SSD, good condition. Comes with charger.",
-    "seller": "TechReseller"
+    "name": "Used Study Table",
+    "price": 1500,
+    "category": 3,
+    "description": "Wooden study table, slightly used but still in good condition. Ideal for students or home offices, with a smooth surface for writing or using a laptop. Minimal scratches on the edges that do not affect functionality. Sturdy legs and lightweight enough to move easily. Perfect for small rooms or study corners.",
+    "seller": "Maria"
   },
   {
     "id": 2,
-    "name": "Vintage Denim Jacket",
+    "name": "Office Chair",
     "price": 1200,
-    "category": "Fashion",
-    "description": "Classic blue denim jacket, size M, lightly worn. Perfect for casual wear.",
-    "seller": "ClosetClear"
+    "category": 3,
+    "description": "Ergonomic office chair with cushion, gently used. Features a comfortable padded seat, backrest support, and adjustable height for optimal posture. Smooth swivel base and wheels make it easy to move around your workspace. The chair has minor wear but remains very functional, perfect for home or office use.",
+    "seller": "Juan"
   },
   {
     "id": 3,
-    "name": "Wooden Coffee Table",
-    "price": 2200,
-    "category": "Home & Living",
-    "description": "Solid acacia wood coffee table, minor scratches, sturdy. 120cm x 60cm.",
-    "seller": "HomeGoodsPH"
+    "name": "Bookshelf",
+    "price": 800,
+    "category": 3,
+    "description": "Three-tier wooden bookshelf, with minor scratches that add character but do not compromise durability. Provides ample storage for books, decor, or office supplies. Sturdy and stable, easy to assemble and fits well in bedrooms, living rooms, or offices. Lightweight yet strong enough to hold heavy books or collectibles.",
+    "seller": "Liza"
   },
   {
     "id": 4,
-    "name": "Organic Face Cream",
-    "price": 450,
-    "category": "Beauty & Personal Care",
-    "description": "Shea butter and aloe vera moisturizer, 200ml, unopened.",
-    "seller": "EcoBeauty"
+    "name": "Laptop Stand",
+    "price": 500,
+    "category": 3,
+    "description": "Aluminum adjustable laptop stand in like-new condition. Lightweight, foldable, and portable, suitable for working at home, office, or school. Adjustable angles for ergonomic typing and better screen visibility. Durable and rust-resistant aluminum with rubber pads to prevent slipping or scratching surfaces.",
+    "seller": "Carlos"
   },
   {
     "id": 5,
-    "name": "Yoga Mat",
-    "price": 600,
-    "category": "Sports & Outdoors",
-    "description": "Non-slip exercise mat, 6mm thick, includes carrying strap. Used only twice.",
-    "seller": "FitnessHub"
+    "name": "Dining Chair Set",
+    "price": 3500,
+    "category": 3,
+    "description": "Set of 4 wooden dining chairs, solidly built and slightly used. Each chair has a smooth finish, comfortable seating, and stable legs. Perfect for family meals or small dining spaces. Minimal wear from previous use, but structurally intact and ready for immediate use. Timeless design that matches most dining tables.",
+    "seller": "Ana"
   },
   {
     "id": 6,
-    "name": "The Great Gatsby (Hardcover)",
-    "price": 250,
-    "category": "Books & Stationery",
-    "description": "Classic novel, in excellent condition. Collector's edition.",
-    "seller": "Bookworm"
+    "name": "Coffee Table",
+    "price": 2000,
+    "category": 3,
+    "description": "Glass-top coffee table with a stylish and modern design. Minimal wear with some light scratches on the glass, easily polished. Sturdy frame provides stability, perfect for living rooms, lounges, or offices. Offers a functional and decorative centerpiece for your space, ideal for holding books, drinks, or decor items.",
+    "seller": "Rafael"
   },
   {
     "id": 7,
-    "name": "LEGO Classic Bricks Set",
-    "price": 1500,
-    "category": "Toys & Games",
-    "description": "Over 500 pieces, suitable for ages 4+. Slightly opened but complete.",
-    "seller": "ToyChest"
+    "name": "Wardrobe",
+    "price": 5000,
+    "category": 3,
+    "description": "2-door wooden wardrobe with shelves, in good condition. Offers ample storage for clothes, accessories, and personal items. Durable construction with easy-to-use handles and smooth sliding doors. Minimal scratches from normal use. Suitable for bedrooms of all sizes, keeps your space organized and clutter-free.",
+    "seller": "Sophie"
   },
   {
     "id": 8,
-    "name": "Car Jump Starter",
-    "price": 3200,
-    "category": "Automotive",
-    "description": "Portable 12V jump starter with USB ports. Used once, works perfectly.",
-    "seller": "AutoGear"
+    "name": "TV Stand",
+    "price": 1800,
+    "category": 3,
+    "description": "Wooden TV stand with two drawers and open shelves, lightly used. Provides space for a TV, media players, and accessories. Sturdy construction with smooth finish, easy to clean. Drawers glide smoothly and shelves can accommodate books, gaming consoles, or decorative items. Perfect for living rooms or entertainment areas.",
+    "seller": "Miguel"
   },
   {
     "id": 9,
-    "name": "Digital Blood Pressure Monitor",
-    "price": 1800,
-    "category": "Health",
-    "description": "Automatic upper arm monitor, LCD display, includes batteries. Brand new.",
-    "seller": "WellnessStore"
+    "name": "Recliner Chair",
+    "price": 3000,
+    "category": 3,
+    "description": "Leather recliner chair with minor scratches on the surface, otherwise in good condition. Comfortable cushioning with adjustable reclining feature for maximum relaxation. Sturdy frame supports regular use and the chair is easy to clean. Ideal for living rooms, reading corners, or home theaters. Adds style and comfort to any space.",
+    "seller": "Ella"
   },
   {
     "id": 10,
-    "name": "Organic Brown Rice (5kg)",
-    "price": 400,
-    "category": "Groceries",
-    "description": "Freshly packed organic brown rice. Best before Dec 2025.",
-    "seller": "HealthyOptions"
-  },
-  {
-    "id": 11,
-    "name": "Bluetooth Headphones",
-    "price": 1800,
-    "category": "Electronics",
-    "description": "Wireless over-ear headphones with noise cancellation. Battery lasts up to 20 hours. Like new.",
-    "seller": "GadgetHub"
-  },
-  {
-    "id": 13,
-    "name": "Decorative Throw Pillows (Set of 2)",
-    "price": 600,
-    "category": "Home & Living",
-    "description": "Bohemian style with tassels, 18x18 inches. Slightly used but still fluffy.",
-    "seller": "HomeGoodsPH"
-  },
-  {
-    "id": 14,
-    "name": "Hair Straightener Brush",
-    "price": 950,
-    "category": "Beauty & Personal Care",
-    "description": "Ceramic brush straightener, heats up quickly. Used only a few times.",
-    "seller": "EcoBeauty"
-  },
-  {
-    "id": 15,
-    "name": "Adjustable Dumbbells (10kg pair)",
-    "price": 2200,
-    "category": "Sports & Outdoors",
-    "description": "Great for home workouts. Slight wear but fully functional.",
-    "seller": "FitnessHub"
-  },
-  {
-    "id": 16,
-    "name": "Coloring Books for Adults (Set of 3)",
-    "price": 350,
-    "category": "Books & Stationery",
-    "description": "Stress relief designs, never used. Includes colored pencils.",
-    "seller": "Bookworm"
-  },
-  {
-    "id": 17,
-    "name": "UNO Card Game",
-    "price": 200,
-    "category": "Toys & Games",
-    "description": "Classic family card game. Complete set, lightly used.",
-    "seller": "ToyChest"
-  },
-  {
-    "id": 18,
-    "name": "Car Vacuum Cleaner",
-    "price": 1500,
-    "category": "Automotive",
-    "description": "Portable 12V vacuum with attachments. Works perfectly.",
-    "seller": "AutoGear"
-  },
-  {
-    "id": 19,
-    "name": "Essential Oil Diffuser",
+    "name": "Nightstand Update",
     "price": 700,
-    "category": "Health",
-    "description": "Ultrasonic aromatherapy diffuser with LED light. Gently used.",
-    "seller": "WellnessStore"
+    "category": 3,
+    "description": "Small wooden nightstand in like-new condition. Compact yet functional, with a drawer and open shelf for storage. Smooth surface ideal for a lamp, clock, or books. Minimal signs of use and durable construction. Perfect for bedrooms or guest rooms, providing convenient bedside storage and easy organization.",
+    "seller": "David"
   },
   {
-    "id": 20,
-    "name": "Organic Honey (500ml)",
-    "price": 350,
-    "category": "Groceries",
-    "description": "Pure wild honey, sealed and unopened. Harvested locally.",
-    "seller": "HealthyOptions"
-  },
-  {
-    "id": 21,
-    "name": "Smart Watch",
-    "price": 2800,
-    "category": "Electronics",
-    "description": "Fitness tracker with heart rate monitor, barely used. Compatible with Android and iOS.",
-    "seller": "TechReseller"
-  },
-  {
-    "id": 22,
-    "name": "Leather Belt",
-    "price": 500,
-    "category": "Fashion",
-    "description": "Genuine leather, brown, size 32. Minimal signs of wear.",
-    "seller": "ClosetClear"
-  },
-  {
-    "id": 23,
-    "name": "Cast Iron Skillet (10 inch)",
-    "price": 900,
-    "category": "Home & Living",
-    "description": "Pre-seasoned, great for cooking. Slight rust spot easily removable.",
-    "seller": "HomeGoodsPH"
-  },
-  {
-    "id": 24,
-    "name": "Makeup Brush Set",
-    "price": 550,
-    "category": "Beauty & Personal Care",
-    "description": "12-piece set, synthetic bristles. Used once, thoroughly cleaned.",
-    "seller": "EcoBeauty"
-  },
-  {
-    "id": 25,
-    "name": "Cycling Helmet",
-    "price": 1100,
-    "category": "Sports & Outdoors",
-    "description": "Adult size adjustable, lightweight. No cracks, like new.",
-    "seller": "FitnessHub"
-  },
-  {
-    "id": 26,
-    "name": "Notebooks (Pack of 5)",
-    "price": 250,
-    "category": "Books & Stationery",
-    "description": "Spiral-bound, college-ruled, 100 pages each. Brand new.",
-    "seller": "Bookworm"
-  },
-  {
-    "id": 27,
-    "name": "Chess Set",
-    "price": 800,
-    "category": "Toys & Games",
-    "description": "Wooden board with carved pieces, all intact. Slight wear on box.",
-    "seller": "ToyChest"
-  },
-  {
-    "id": 28,
-    "name": "Windshield Sun Shade",
-    "price": 350,
-    "category": "Automotive",
-    "description": "Folds easily, reflects heat. Used for one summer.",
-    "seller": "AutoGear"
-  },
-  {
-    "id": 29,
-    "name": "Resistance Bands Set",
-    "price": 650,
-    "category": "Health",
-    "description": "5 levels of resistance, includes door anchor. Like new.",
-    "seller": "WellnessStore"
-  },
-  {
-    "id": 30,
-    "name": "Organic Coffee Beans (1kg)",
-    "price": 600,
-    "category": "Groceries",
-    "description": "Arabica, medium roast, sealed bag. Best before 2026.",
-    "seller": "HealthyOptions"
-  },
-  {
-    "id": 31,
-    "name": "Wireless Earphonse",
-    "price": 450,
-    "category": "Electronics",
-    "description": "Redmi wireless earphones, barely used, works very well.",
-    "seller": "Amaya"
+    "id": 12,
+    "name": "BEaut",
+    "price": 234,
+    "category": 3,
+    "description": "update",
+    "seller": "342"
   }
 ]

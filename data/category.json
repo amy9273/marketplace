@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name": "Electronics"
+    },
+    {
+        "id": 2,
+        "name": "Fashion"
+    },
+    {
+        "id": 3,
+        "name": "Home & Living"
+    },
+    {
+        "id": 4,
+        "name": "Beauty & Personal Care"
+    },
+    {
+        "id": 5,
+        "name": "Sports & Outdoors"
+    },
+    {
+        "id": 6,
+        "name": "Books & Stationery"
+    },
+    {
+        "id": 7,
+        "name": "Toys & Games"
+    },
+    {
+        "id": 8,
+        "name": "Automotive"
+    },
+    {
+        "id": 9,
+        "name": "Health"
+    },
+    {
+        "id": 10,
+        "name": "Groceries"
+    }
+]

@@ -53,6 +53,19 @@ exports.checkBody = (req, res, next) => {
     req.body.price = parsedPrice; // but careful, it might be string originally
   }
 
+  // For category, ensure it's a number if present
+  if (category !== undefined) {
+    const categoryId = parseInt(category);
+    if (isNaN(categoryId)) {
+      return res.status(400).json({
+        status: 'fail',
+        message: 'Category must be a valid ID'
+      });
+    }
+    // Optionally convert to number
+    req.body.category = categoryId;
+  }
+
   next();
 };
 
@@ -115,6 +128,8 @@ exports.createProduct = (req, res) => {
     });
   }
 
+  const categoryId = parseInt(category);
+
   const products = getProducts();
   const maxId = products.length > 0 ? Math.max(...products.map(p => p.id)) : 0;
 
@@ -122,7 +137,7 @@ exports.createProduct = (req, res) => {
     id: maxId + 1,
     name: name.trim(),
     price: parsedPrice,
-    category: category.trim(), // Store as number, not string
+    category: categoryId, // Store as number, not string
     description: description.trim(),
     seller: seller.trim(),
   };
@@ -167,6 +182,13 @@ exports.updateProduct = (req, res) => {
         product.price = parsedPrice;
       } 
       
+      // Handle category - parse to integer and validate
+      else if (field === 'category') {
+        const categoryId = parseInt(req.body.category);
+      
+        product.category = categoryId; // Store as number
+      } 
+      
       // Handle other fields (name, description, seller)
       else {
         product[field] = req.body[field];
@@ -193,17 +215,14 @@ exports.updateProduct = (req, res) => {
 // DELETE /api/v1/products/:id
 exports.deleteProduct = (req, res) => {
   const products = req.products;
-  const id = req.product.id;
 
   products.splice(req.productIndex, 1);
 
   try {
     fs.writeFileSync(dataPath, JSON.stringify(products, null, 2));
 
-    // Use 200 instead of 204 to allow response body
-    res.status(200).json({
+    res.status(204).json({
       status: 'success',
-      message: `Product with ID ${id} deleted successfully`,
       data: null
     });
   } catch (err) {

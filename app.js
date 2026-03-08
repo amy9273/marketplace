@@ -2,6 +2,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const productRouter = require('./routes/productRoutes');
+const categoryRouter = require('./routes/categoryRoutes');
 
 const app = express();
 
@@ -15,5 +16,6 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes 
 app.use('/api/v1/products', productRouter); // Changed from '/' to '/api/v1/products'
+app.use('/api/v1/categories', categoryRouter); // Changed from '/' to '/api/v1/categories'
 
-module.exports = app; 
+module.exports = app; // export the Express app

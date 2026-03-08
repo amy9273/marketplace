@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Megrim|Nunito+Sans:400,900"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/155/ear-of-maize_1f33d.png"
+    />
+
+    <title>{%NAME%}</title>
+    
+   <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+      }
+
+      html {
+        font-size: 62.5%;
+        box-sizing: border-box;
+      }
+
+      body {
+        padding: 5rem 5rem 10rem;
+        line-height: 1.7;
+        font-family: 'Nunito Sans', sans-serif;
+        color: #333;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #fd6f73 0%, #fad0c4 100%);
+      }
+
+      h1 {
+        font-family: 'Megrim', sans-serif;
+        font-size: 6rem;
+        color: #fff;
+        text-align: center;
+        position: relative;
+        word-spacing: 3px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+      }
+
+      h1::after {
+        content: '';
+        display: block;
+        height: 4px;
+        width: 120px;
+        background: linear-gradient(to right, #ff9a9e, #fad0c4);
+        margin: 1.5rem auto 0;
+        border-radius: 2px;
+      }
+
+      .container {
+        width: 95rem;
+        margin: 0 auto;
+      }
+
+      .product {
+        width: 60rem;
+        margin: 0 auto;
+        margin-top: 9rem;
+        background: white;
+        box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.15);
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+        border-left: 5px solid #ff9a9e;
+      }
+
+      .product__hero {
+        position: relative;
+        height: 22rem;
+        overflow: hidden;
+      }
+
+      .product__hero::before {
+        content: '';
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: linear-gradient(to right, #ff9a9e, #fad0c4);
+        opacity: 0.6;
+        z-index: 100;
+      }
+
+      .product__organic {
+        position: absolute;
+        top: -3rem;
+        right: -3rem;
+        z-index: 1000;
+        height: 10rem;
+        width: 10rem;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        border-radius: 50%;
+        transform: rotate(15deg);
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .product__organic:hover {
+        transform: rotate(15deg) scale(1.05);
+      }
+
+      .product__organic h5 {
+        font-weight: 900;
+        text-transform: uppercase;
+        font-size: 1.6rem;
+        color: white;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      }
+
+      .product__back:link,
+      .product__back:visited {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        z-index: 1000;
+        color: #555;
+        background-color: white;
+        box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.2);
+        border-radius: 100rem;
+        padding: 0.8rem 2rem;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+
+      .product__back:hover,
+      .product__back:active {
+        background-color: #ff9a9e;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 1.2rem 2.5rem rgba(0, 0, 0, 0.25);
+      }
+
+      .product__name {
+        background: linear-gradient(to right, #ff9a9e, #fad0c4);
+        padding: 2rem;
+        font-family: 'Megrim', sans-serif;
+        font-size: 3.5rem;
+        color: white;
+        text-align: center;
+        word-spacing: 2px;
+        letter-spacing: 1px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      .product__details {
+        background-color: #f9f9f9;
+        padding: 3rem 4rem;
+        font-size: 1.8rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1.5rem;
+        border-bottom: 1px solid #eee;
+      }
+
+      .product__description {
+        padding: 4rem;
+        font-size: 1.6rem;
+        line-height: 1.8;
+        color: #555;
+        background: white;
+      }
+
+      .product__link:link,
+      .product__link:visited {
+        display: block;
+        background: linear-gradient(to right, #ff9a9e, #fad0c4);
+        color: white;
+        font-size: 1.6rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.8rem;
+        text-align: center;
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+        letter-spacing: 0.5px;
+        gap: 1rem;
+      }
+
+      .product__link:hover,
+      .product__link:active {
+        background: linear-gradient(to right, #ff7b7f, #f8c0b0);
+        transform: translateY(-3px);
+        box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+      }
+
+      .emoji-left {
+        font-size: 2rem;
+        margin-right: 1rem;
+      }
+
+      .emoji-right {
+        font-size: 2rem;
+        margin-left: 1rem;
+      }
+
+      .not-organic {
+        display: none;
+      }
+
+      /* ----- product actions ----- */
+      .product-actions {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        margin-top: 2rem;
+        padding: 2rem;
+        background: #f9f9f9;
+      }
+
+      .btn-update,
+      .btn-delete {
+        padding: 1.2rem 3rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        border: none;
+        border-radius: 40px;
+        cursor: pointer;
+        font-family: 'Megrim', sans-serif;
+        letter-spacing: 1px;
+        transition: all 0.3s;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+
+      .btn-update {
+        background: #ff9a9e;
+        color: white;
+        box-shadow: 0 1rem 2rem rgba(255, 154, 158, 0.3);
+      }
+
+      .btn-update:hover {
+        background: #ff6b6b;
+        transform: translateY(-2px);
+      }
+
+      .btn-delete {
+        background: #ff6b6b;
+        color: white;
+        box-shadow: 0 1rem 2rem rgba(255, 107, 107, 0.3);
+      }
+
+      .btn-delete:hover {
+        background: #ff4757;
+        transform: translateY(-2px);
+      }
+
+      @media (max-width: 1000px) {
+        .container {
+          width: 100%;
+          max-width: 800px;
+        }
+        
+        h1 {
+          font-size: 4.5rem;
+        }
+        
+        .product {
+          width: 90%;
+          max-width: 500px;
+        }
+        
+        .product__details {
+          grid-template-columns: 1fr;
+          padding: 2.5rem 3rem;
+        }
+        
+        .product__emoji {
+          font-size: 11rem;
+        }
+        
+        .product__organic {
+          height: 8rem;
+          width: 8rem;
+          top: -2.5rem;
+          right: -2.5rem;
+        }
+        
+        .product__organic h5 {
+          font-size: 1.4rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>🛒 Local Shop 🛍️</h1>
+
+      <figure class="product">
+        <a href="/" class="product__back">
+          <span class="emoji-left">👈</span>Back
+        </a>
+
+        <div class="product__hero">
+        </div>
+
+        <h2 class="product__name">{%NAME%}</h2>
+
+        <div class="product__details">
+          <p><span class="emoji-left">🛒</span>Category: {%CATEGORY%}</p>
+          <p><span class="emoji-left">💁‍♂️</span>Seller: {%SELLER%}</p>
+          <p><span class="emoji-left">🏷</span>Price: {%PRICE%} PHP</p>
+        </div>
+
+        <a href="#" class="product__link">
+          <span class="emoji-left">🛒</span>
+          <span>Add to shopping cart ({%PRICE%} PHP)</span>
+        </a>
+
+        <div class="product-actions">
+          <a href="/update?id={%ID%}" class="btn-update">
+            ✏️ Update
+          </a>
+          <button class="btn-delete">
+            🗑 Delete
+          </button>
+        </div>
+
+        <p class="product__description">
+          {%DESCRIPTION%}
+        </p>
+      </figure>
+    </div>
+
+    <script>
+      const deleteBtn = document.querySelector('.btn-delete');
+
+      deleteBtn.addEventListener('click', async () => {
+        const productId = "{%ID%}";
+
+        if (!confirm('Are you sure you want to delete this product?')) return;
+
+        try {
+          const response = await fetch(`/api/v1/products/${productId}`, {
+            method: 'DELETE',
+          });
+
+          if (response.status === 204) {
+            alert('✅ Product deleted!');
+            window.location.href = '/';
+          } else {
+            const data = await response.json();
+            alert('Error deleting product: ' + (data.message || 'Unknown error'));
+          }
+        } catch (err) {
+          console.error(err);
+          alert('Network error: Could not delete product.');
+        }
+      });
+    </script>
+  </body>
+</html>

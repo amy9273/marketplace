@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Megrim|Nunito+Sans:400,900"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/155/ear-of-maize_1f33d.png"
+    />
+    <title>NODE FARM · Add item</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+      }
+
+      html {
+        font-size: 62.5%;
+        box-sizing: border-box;
+      }
+
+      body {
+        padding: 5rem 5rem 10rem;
+        line-height: 1.7;
+        font-family: "Nunito Sans", sans-serif;
+        color: #333;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #fd6f73 0%, #fad0c4 100%);
+      }
+
+      h1 {
+        font-family: "Megrim", sans-serif;
+        font-size: 6rem;
+        color: #fff;
+        text-align: center;
+        position: relative;
+        word-spacing: 3px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 5rem;
+      }
+
+      h1::after {
+        content: "";
+        display: block;
+        height: 4px;
+        width: 120px;
+        background: linear-gradient(to right, #ff9a9e, #fad0c4);
+        margin: 1.5rem auto 0;
+        border-radius: 2px;
+      }
+
+      .container {
+        width: 95rem;
+        margin: 0 auto;
+      }
+
+      /* ----- new item form page styles ----- */
+      .form-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 1.5rem 4rem 0.5rem rgba(0, 0, 0, 0.12);
+        padding: 4rem 5rem;
+        border-left: 5px solid #ff9a9e;
+        transition: all 0.3s;
+      }
+
+      .form-card:hover {
+        box-shadow: 0 2.5rem 6rem 1.5rem rgba(0, 0, 0, 0.15);
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem 4rem;
+      }
+
+      .full-width {
+        grid-column: span 2;
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+
+      .field label {
+        font-size: 1.6rem;
+        font-weight: 900;
+        color: #ff6b6b;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .field input,
+      .field select,
+      .field textarea {
+        padding: 1.2rem 1.8rem;
+        font-size: 1.7rem;
+        border: 2px solid #ffe3e3;
+        border-radius: 8px;
+        background: #fef8f8;
+        font-family: "Nunito Sans", sans-serif;
+        transition: 0.2s;
+      }
+
+      .field input:focus,
+      .field select:focus,
+      .field textarea:focus {
+        outline: none;
+        border-color: #ff9a9e;
+        background: white;
+      }
+
+      .field input::placeholder,
+      .field textarea::placeholder {
+        color: #ff9a9e; /* change this to any color */
+        opacity: 0.8; /* ensures full color (some browsers lower opacity) */
+      }
+
+      .field textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+
+      .form-actions {
+        margin-top: 4rem;
+        display: flex;
+        justify-content: flex-end;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .btn-submit,
+      .btn-cancel {
+        padding: 1.4rem 4rem;
+        font-size: 1.8rem;
+        font-weight: 700;
+        border: none;
+        border-radius: 40px;
+        cursor: pointer;
+        font-family: "Megrim", sans-serif;
+        letter-spacing: 1px;
+        transition: all 0.3s;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .btn-submit {
+        background: #ff9a9e;
+        color: white;
+        box-shadow: 0 1rem 2rem rgba(255, 154, 158, 0.3);
+      }
+
+      .btn-submit:hover {
+        background: #ff6b6b;
+        transform: translateY(-2px);
+      }
+
+      .btn-cancel {
+        background: transparent;
+        color: #666;
+        border: 2px solid #ddd;
+      }
+
+      .btn-cancel:hover {
+        background: #f0f0f0;
+        border-color: #aaa;
+      }
+
+      .message {
+        background: #b9f5d8;
+        padding: 1.5rem 2.5rem;
+        border-radius: 40px;
+        font-size: 1.6rem;
+        margin-top: 3rem;
+        display: inline-block;
+        color: #1b7b4b;
+        font-weight: 700;
+        border-left: 5px solid #2ecc71;
+      }
+
+      @media (max-width: 1000px) {
+        .container {
+          width: 100%;
+          max-width: 800px;
+        }
+
+        h1 {
+          font-size: 4.5rem;
+        }
+
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .full-width {
+          grid-column: span 1;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>🌽 add your product 🥦</h1>
+
+      <div class="form-card">
+        <form
+          id="itemForm"
+          onsubmit="
+            event.preventDefault();
+            addNewItem();
+          "
+        >
+          <div class="form-grid">
+            <!-- item name -->
+            <div class="field full-width">
+              <label><span>📛</span> Item name</label>
+              <input
+                type="text"
+                id="name"
+                placeholder="e.g. Office Chair, Organic Avocado"
+                required
+              />
+            </div>
+
+            <!-- price + category (two columns) -->
+            <div class="field">
+              <label><span>💰</span> Price (₱)</label>
+              <input
+                type="number"
+                id="price"
+                step="0.01"
+                min="0"
+                placeholder="1200"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label><span>🛒</span> Category</label>
+              <select id="category" required>
+                <option value="">Loading categories...</option>
+              </select>
+            </div>
+
+            <!-- seller name -->
+            <div class="field">
+              <label><span>🧑</span> Seller</label>
+              <input type="text" id="seller" placeholder="Juan" required />
+            </div>
+
+            <!-- description (full width) -->
+            <div class="field full-width">
+              <label><span>📝</span> Description</label>
+              <textarea
+                id="description"
+                placeholder="Provide details about the item ..."
+                required
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <a href="/" class="btn-cancel">Cancel</a>
+            <button type="submit" class="btn-submit">
+              ➕ Add to marketplace
+            </button>
+          </div>
+        </form>
+
+        <!-- success message -->
+        <div id="liveMessage" class="message" style="display: none"></div>
+      </div>
+    </div>
+    <script>
+      async function loadCategories() {
+        const categorySelect = document.getElementById('category');
+        
+        try {
+          // Show loading state
+          categorySelect.innerHTML = '<option value="">Loading categories...</option>';
+          categorySelect.disabled = true;
+
+          // Fetch categories from your API
+          const response = await fetch('/api/v1/categories');
+          
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          
+          const data = await response.json();
+          
+          // Clear loading state
+          categorySelect.innerHTML = '';
+          categorySelect.disabled = false;
+
+          // Check if we have categories
+          if (data.status === 'success' && data.data && data.data.categories && data.data.categories.length > 0) {
+            // Add default option
+            const defaultOption = document.createElement('option');
+            defaultOption.value = '';
+            defaultOption.textContent = 'Select a category';
+            defaultOption.disabled = true;
+            defaultOption.selected = true;
+            categorySelect.appendChild(defaultOption);
+
+            // Add categories from the database
+            data.data.categories.forEach(category => {
+              const option = document.createElement('option');
+              option.value = category.id;  // Store the ID as value
+              option.textContent = category.name;  // Show the name
+              categorySelect.appendChild(option);
+            });
+          } else {
+            // No categories found
+            categorySelect.innerHTML = '<option value="">No categories available</option>';
+            categorySelect.disabled = true;
+          }
+        } catch (error) {
+          console.error('Error loading categories:', error);
+          
+          // Show error state
+          categorySelect.innerHTML = '<option value="">Error loading categories</option>';
+          categorySelect.disabled = true;
+          
+          // Show error message to user
+          const errorDiv = document.createElement('div');
+          errorDiv.className = 'error-message';
+          errorDiv.textContent = 'Failed to load categories. Please refresh the page.';
+          categorySelect.parentNode.appendChild(errorDiv);
+        }
+      }
+
+      // Function to add new item
+      window.addNewItem = async function () {
+        // Collect form values
+        const name = document.getElementById("name").value;
+        const price = document.getElementById("price").value;
+        const category = document.getElementById("category").value;
+        const seller = document.getElementById("seller").value;
+        const description = document.getElementById("description").value;
+
+        // Validation
+        if (!name || !price || !category || !seller || !description) {
+          alert("Please fill all fields");
+          return;
+        }
+
+        // Create new item object (without ID - backend will handle it)
+        const newItem = {
+          name: name,
+          price: parseFloat(price),
+          category: parseInt(category),
+          description: description,
+          seller: seller,
+        };
+
+        // Get existing items from localStorage or initialize empty array
+        let existingItems = [];
+        try {
+          existingItems = JSON.parse(
+            localStorage.getItem("marketplaceItems") || "[]",
+          );
+        } catch (e) {
+          existingItems = [];
+        }
+
+        // Add new item to array
+        existingItems.push(newItem);
+
+        // Save back to localStorage
+        localStorage.setItem(
+          "marketplaceItems",
+          JSON.stringify(existingItems, null, 2),
+        );
+
+        // Log the JSON to console (for backend reference)
+        console.log(
+          "New item to send to backend:",
+          JSON.stringify(newItem, null, 2),
+        );
+        console.log("All items JSON:", JSON.stringify(existingItems, null, 2));
+
+        // Send to backend API to save to JSON file
+        try {
+          const response = await fetch("/api/v1/products", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newItem),
+          });
+
+          const data = await response.json();
+
+          if (data.status === "success") {
+            console.log("Successfully saved to JSON file:", data);
+          } else {
+            console.warn("Backend response:", data);
+          }
+        } catch (error) {
+          console.error("Error saving to backend:", error);
+        }
+
+        // Show success message
+        const msgBox = document.getElementById("liveMessage");
+        msgBox.style.display = "block";
+        msgBox.textContent = "✅ Item added to marketplace!";
+
+        // Reset form
+        document.getElementById("itemForm").reset();
+
+        // Hide message after 3 seconds
+        setTimeout(() => {
+          msgBox.style.display = "none";
+        }, 3000);
+      };
+
+      // Load categories when the page loads
+      document.addEventListener('DOMContentLoaded', loadCategories);
+
+    </script>
+  </body>
+</html>
